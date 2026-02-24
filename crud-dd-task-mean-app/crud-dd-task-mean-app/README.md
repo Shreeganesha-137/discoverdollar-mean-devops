@@ -1,3 +1,57 @@
+discoverdollar-mean-devops/
+├── backend/
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── server.js
+│   └── ... other backend files
+├── frontend/
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── angular.json
+│   └── ... other Angular frontend files
+├── docker-compose.yml
+├── Jenkinsfile
+├── README.md
+└── screenshots/
+    ├── ci-cd-execution.png
+    ├── docker-build-push.png
+    └── app-ui.png
+
+
+# Discover Dollar MEAN-DevOps Deployment
+
+## Overview
+This repository contains a complete MEAN stack application deployed with Docker, Docker Compose, and a CI/CD pipeline using Jenkins.
+
+## Folder Structure
+- `backend/` - Node.js API server
+- `frontend/` - Angular 15 frontend
+- `docker-compose.yml` - Defines all services (MongoDB, backend, frontend)
+- `Jenkinsfile` - CI/CD pipeline configuration
+- `screenshots/` - Screenshots of build, push, deployment, and UI
+
+## Prerequisites
+- Docker and Docker Compose installed
+- Jenkins setup with Docker access
+- DockerHub account
+
+## Setup & Deployment
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Shreeganesha-137/discoverdollar-mean-devops.git
+cd discoverdollar-mean-devops
+
+
+--------------Access the application---------------
+Frontend: http://<server-ip>/
+Backend API: http://<server-ip>:8081/
+
+
+
+
+
+
 In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
 
 The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
