@@ -37,6 +37,9 @@ Backend API: http://<server-ip>:8081/
 
 <img width="1918" height="1078" alt="output2" src="https://github.com/user-attachments/assets/fd4c1bcb-9447-4b5e-999b-07803b384aa4" />
 
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/9e5f9ea2-934a-450d-8946-4cee0432a642" />
+
+
 
 
 
