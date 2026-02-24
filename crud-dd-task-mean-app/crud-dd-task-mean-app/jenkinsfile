@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_USER = "shreeganesha237"
+        FRONTEND_IMAGE = "shreeganesha237/crud-dd-task-mean-app_frontend"
+        BACKEND_IMAGE  = "shreeganesha237/crud-dd-task-mean-app_backend"
+    }
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Shreeganesha-137/discoverdollar-mean-devops.git'
+            }
+        }
+
+        stage('Build Docker Images') {
+            steps {
+                dir('crud-dd-task-mean-app/crud-dd-task-mean-app') {
+                    sh "docker build -t $FRONTEND_IMAGE ./frontend"
+                    sh "docker build -t $BACKEND_IMAGE ./backend"
+                }
+            }
+        }
+
+        stage('Login to DockerHub') {
+            steps {
+                withCredentials([string(credentialsId: 'dockerhub-password', variable: 'DOCKER_PASS')]) {
+                    sh """
+                        echo \$DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    """
+                }
+            }
+        }
+
+        stage('Push Images') {
+            steps {
+                sh "docker push $FRONTEND_IMAGE"
+                sh "docker push $BACKEND_IMAGE"
+            }
+        }
+
+        stage('Deploy Application') {
+            steps {
+                dir('crud-dd-task-mean-app/crud-dd-task-mean-app') {
+                   // Stop existing containers (ignore errors if not running)
+                sh 'docker-compose down || true'
+
+                // Pull latest images from DockerHub
+                sh 'docker-compose pull || true'
+
+                // Start containers with updated ports
+                sh 'docker-compose up --build -d'
+                }
+            }
+        }
+    }
+}
