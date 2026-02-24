@@ -1,15 +1,14 @@
-version: "3.8"
+version: '3.8'
 
 services:
-
-  mongodb:
+  mongo:
     image: mongo:6
-    container_name: mongodb
+    container_name: mongo
     restart: always
-    volumes:
-      - mongo-data:/data/db
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
 
   backend:
     build: ./backend
@@ -18,9 +17,9 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - mongodb
+      - mongo
     environment:
-      - MONGO_URL=mongodb://mongodb:27017/testdb
+      - MONGO_URI=mongodb://mongo:27017/dddb
 
   frontend:
     build: ./frontend
