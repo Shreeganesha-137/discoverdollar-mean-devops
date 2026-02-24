@@ -22,17 +22,20 @@ This repository contains a complete MEAN stack application deployed with Docker,
 
 ## Setup & Deployment
 
-1. Clone the repository:
-```bash
+Clone the repository:
+bash
 git clone https://github.com/Shreeganesha-137/discoverdollar-mean-devops.git
 cd discoverdollar-mean-devops
-
 
 --------------Access the application---------------
 Frontend: http://<server-ip>/
 Backend API: http://<server-ip>:8081/
 
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/f3768df4-b0df-4b71-a58b-0ab581c4d3ae" />
 
+<img width="1918" height="1078" alt="output" src="https://github.com/user-attachments/assets/67d9650f-bb70-4179-949e-81912463d0b1" />
+
+<img width="1918" height="1078" alt="output2" src="https://github.com/user-attachments/assets/fd4c1bcb-9447-4b5e-999b-07803b384aa4" />
 
 
 
