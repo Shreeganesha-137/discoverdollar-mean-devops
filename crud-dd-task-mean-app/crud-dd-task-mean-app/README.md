@@ -1,4 +1,8 @@
 discoverdollar-mean-devops/
+
+<img width="272" height="367" alt="image" src="https://github.com/user-attachments/assets/10b0fbd8-6636-4a21-9545-56f9da827777" />
+<img width="272" height="367" alt="image" src="https://github.com/user-attachments/assets/10b0fbd8-6636-4a21-9545-56f9da827777" />
+
 ├── backend/
 │   ├── Dockerfile
 │   ├── package.json
